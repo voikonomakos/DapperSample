@@ -1,5 +1,4 @@
-﻿using Dapper.Contrib.Extensions;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace DapperSample
 {
@@ -12,10 +11,8 @@ namespace DapperSample
         public string Company { get; set; }
         public string Title { get; set; }
 
-        [Computed]
-        public bool IsNew => Id == default(int);
+       public bool IsNew => Id == default(int);
 
-        [Write(false)]
         public List<Address> Addresses { get; } = new List<Address>();
     }
 }

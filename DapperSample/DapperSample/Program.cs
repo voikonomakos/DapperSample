@@ -4,14 +4,13 @@ namespace DapperSample
 {
     class Program
     {
-        private static string connectionString = "";
+        private static readonly string ConnectionString = "";
 
         static void Main(string[] args)
         {
             try
             {
-                var repo = new ContactRepositoryContrib(connectionString);
-                var contact = repo.Find(1);
+                ContactRepository repository = new ContactRepository(ConnectionString);
             }
             catch (Exception ex)
             {
